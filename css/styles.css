@@ -214,3 +214,43 @@ html[data-theme="dark"] .site-header{
     font-size:0.9rem;
 }
 
+/* Carousel controls */
+.carousel-controls{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:1rem 0;
+    position:relative;
+    z-index:3;
+}
+.ctrl{
+    background:var(--surface);
+    border:1px solid rgba(0,0,0,0.06);
+    padding:0.5rem 0.8rem;
+    border-radius:8px;
+    cursor:pointer;
+}
+.dots{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    justify-content:center;
+    flex:1;
+}
+.dots button{
+    width:8px;
+    height:8px;
+    border-radius:999px;
+    border:0;
+    background:rgba(0,0,0,0.12);
+    transition:var(--transition);
+}
+.dots button.active{
+    width:28px;
+    border-radius:999px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+}
+
+
+
