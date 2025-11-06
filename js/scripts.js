@@ -2,9 +2,6 @@
 const qs = s => document.querySelector(s);
 const qsa = s => Array.from(document.querySelectorAll(s));
 
-/* ---------------------------
-   Theme toggle (light default)
-   --------------------------- */
 const themeToggle = qs('#theme-toggle');
 const themeIcon = qs('#theme-icon');
 const root = document.documentElement;
@@ -15,7 +12,7 @@ else root.setAttribute('data-theme', 'light'); // default
 function updateThemeUI(){
   const isDark = root.getAttribute('data-theme') === 'dark';
   themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-  // animate icon: set opacity on sun/moon groups
+  // animación sol-luna
   const sun = themeIcon.querySelector('.sun');
   const moon = themeIcon.querySelector('.moon');
   if(isDark){ sun.style.opacity = 0; moon.style.opacity = 1; }
@@ -31,20 +28,18 @@ themeToggle.addEventListener('click', () => {
   updateThemeUI();
 });
 
-/* ---------------------------
-   Hamburger menu
-   --------------------------- */
+/* Hamburger menu (móvil) */
 const navToggle = qs('#nav-toggle');
 const nav = qs('#main-nav');
 navToggle.addEventListener('click', (e)=>{
   const expanded = navToggle.getAttribute('aria-expanded') === 'true';
   navToggle.setAttribute('aria-expanded', !expanded);
   nav.classList.toggle('open');
-  // animate hamburger bars
+  // animación menú hamburguesa
   navToggle.classList.toggle('is-open');
 });
 
-/* Close nav on outside click for mobile */
+/* que se cierre el menú cuando pulso por fuera (móvil) */
 document.addEventListener('click', (e) => {
   if(window.innerWidth > 700) return;
   if(!nav.contains(e.target) && !navToggle.contains(e.target)){
@@ -54,16 +49,14 @@ document.addEventListener('click', (e) => {
   }
 });
 
-/* Simple accessibility: show/hide nav when open (mobile) */
+/* móvil */
 const styleNavObserver = new MutationObserver(()=> {
   if(nav.classList.contains('open')) nav.style.display = 'block';
   else nav.style.display = '';
 });
 styleNavObserver.observe(nav, { attributes: true, attributeFilter: ['class'] });
 
-/* ---------------------------
-   Carousel logic
-   --------------------------- */
+/* Carousel --> LÓGICA EXPLICADA EN CLASE*/ 
 const slides = qsa('.slide');
 const dotsWrap = qs('.dots');
 let current = 0;
@@ -101,18 +94,19 @@ showSlide(0);
 qs('#next-slide').addEventListener('click', ()=> { nextSlide(); resetAuto(); });
 qs('#prev-slide').addEventListener('click', ()=> { prevSlide(); resetAuto(); });
 
+/* FUNCIÓN PARA QUE SE PASEN LAS FOTOS SOLAS --> EXPLICADO EN CLASE 061125*/
 function startAuto(){ autoTimer = setInterval(nextSlide, 7000); }
+/*FUNCIÓN RESET-QUE VUELVA EL CARUSEL AL PRINCPIO*/
 function resetAuto(){ clearInterval(autoTimer); startAuto(); }
 startAuto();
 
+/* CONDICIONAL */
 document.addEventListener('visibilitychange', ()=> {
   if(document.hidden) clearInterval(autoTimer);
   else startAuto();
 });
 
-/* ---------------------------
-   Program rows toggle
-   --------------------------- */
+/*  Program rows toggle */
 qsa('.toggle-row').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const tr = btn.closest('tr');

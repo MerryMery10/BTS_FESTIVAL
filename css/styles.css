@@ -1,4 +1,6 @@
 
+/* VARIABLES */
+
 :root{
   --bg: #FAFAFB;              
   --surface: #FFFFFF;
@@ -93,6 +95,7 @@ html[data-theme="dark"] .site-header{
     border-radius:8px;
     color:var(--text);
     font-weight:600;
+    text-decoration: none;
     transition:var(--transition);
 }
 .nav-list a:hover{
@@ -204,6 +207,7 @@ html[data-theme="dark"] .site-header{
     background:linear-gradient(90deg,var(--accent),var(--accent-2));
     color:white;
     box-shadow:var(--shadow-1);
+    text-decoration: none;
 }
 .btn.outline{
     background:transparent;
@@ -230,6 +234,7 @@ html[data-theme="dark"] .site-header{
     padding:0.5rem 0.8rem;
     border-radius:8px;
     cursor:pointer;
+    color: var(--accent);
 }
 .dots{
     display:flex;
@@ -251,7 +256,7 @@ html[data-theme="dark"] .site-header{
     border-radius:999px;
     background:linear-gradient(90deg,var(--accent),var(--accent-2));
 }
-/* Days grid */
+/*grid de los DAYS */
 .days{
     padding:3rem 0;
 }
@@ -288,5 +293,6 @@ html[data-theme="dark"] .site-header{
     gap:0.5rem;
     align-items:center;
 }
+
 
 
