@@ -59,6 +59,76 @@
     </div>
   </header> 
 
+    <main>
+    <!-- HERO: carrusel de 5 videos -->
+    <section class="hero" aria-label="Hero: Eras carousel">
+      <div class="carousel" id="era-carousel" role="region" aria-roledescription="carousel">
+        <div class="slides">
+          <div class="slide" data-era="Dark & Wild" aria-hidden="false">
+            <video class="bg-video" muted playsinline loop preload="metadata" poster="assets/era-dark.jpg">
+              <source src="assets/era-dark.mp4" type="video/mp4">
+            </video>
+            <div class="slide-content container">
+              <h1 class="slide-title">Dark &amp; Wild <span class="day">— Día 1</span></h1>
+              <p class="slide-sub">Inicio de la carrera: energía cruda y rebelde.</p>
+              <a href="programa.html#dia1" class="btn primary">Ver programa</a>
+            </div>
+          </div>
+
+          <div class="slide" data-era="HYYH" aria-hidden="true">
+            <video class="bg-video" muted playsinline loop preload="metadata" poster="assets/era-hyyh.jpg">
+              <source src="assets/era-hyyh.mp4" type="video/mp4">
+            </video>
+            <div class="slide-content container">
+              <h1 class="slide-title">The Most Beautiful Moment in Life <span class="day">— Día 2</span></h1>
+              <p class="slide-sub">Madurez emocional y nostalgia juvenil.</p>
+              <a href="programa.html#dia2" class="btn primary">Ver programa</a>
+            </div>
+          </div>
+
+          <div class="slide" data-era="Wings" aria-hidden="true">
+            <video class="bg-video" muted playsinline loop preload="metadata" poster="assets/era-wings.jpg">
+              <source src="assets/era-wings.mp4" type="video/mp4">
+            </video>
+            <div class="slide-content container">
+              <h1 class="slide-title">Wings <span class="day">— Día 3</span></h1>
+              <p class="slide-sub">Autodescubrimiento y simbolismo.</p>
+              <a href="programa.html#dia3" class="btn primary">Ver programa</a>
+            </div>
+          </div>
+
+          <div class="slide" data-era="Love Yourself" aria-hidden="true">
+            <video class="bg-video" muted playsinline loop preload="metadata" poster="assets/era-love.jpg">
+              <source src="assets/era-love.mp4" type="video/mp4">
+            </video>
+            <div class="slide-content container">
+              <h1 class="slide-title">Love Yourself <span class="day">— Día 4</span></h1>
+              <p class="slide-sub">Aceptación, amor y grandes éxitos.</p>
+              <a href="programa.html#dia4" class="btn primary">Ver programa</a>
+            </div>
+          </div>
+
+          <div class="slide" data-era="Map of the Soul" aria-hidden="true">
+            <video class="bg-video" muted playsinline loop preload="metadata" poster="assets/era-map.jpg">
+              <source src="assets/era-map.mp4" type="video/mp4">
+            </video>
+            <div class="slide-content container">
+              <h1 class="slide-title">Map of the Soul <span class="day">— Día 5</span></h1>
+              <p class="slide-sub">Introspección y conexión con ARMY.</p>
+              <a href="programa.html#dia5" class="btn primary">Ver programa</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- controls -->
+        <div class="carousel-controls container">
+          <button class="ctrl" id="prev-slide" aria-label="Anterior">◀</button>
+          <div class="dots" role="tablist" aria-label="Selector de slides"></div>
+          <button class="ctrl" id="next-slide" aria-label="Siguiente">▶</button>
+        </div>
+      </div>
+    </section>
+
 
   <script src="js/scripts.js" type="module"></script>
 </body>    
