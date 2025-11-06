@@ -122,5 +122,6 @@ qsa('.toggle-row').forEach(btn=>{
     const open = !details.hidden;
     details.hidden = open;
     btn.setAttribute('aria-expanded', String(!open));
-  });
+    });
 });
+

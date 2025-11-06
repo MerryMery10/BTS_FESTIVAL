@@ -251,6 +251,42 @@ html[data-theme="dark"] .site-header{
     border-radius:999px;
     background:linear-gradient(90deg,var(--accent),var(--accent-2));
 }
-
+/* Days grid */
+.days{
+    padding:3rem 0;
+}
+.days h2{
+    margin:0 0 0.5rem;
+    font-family:var(--ff-heading);
+}
+.lead{
+    color:var(--muted);
+    margin:0 0 1rem;
+}
+.days-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1rem;
+}
+.day-card{
+    background:var(--surface);
+    padding:1rem;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-1);
+    transition:transform var(--transition);
+}
+.day-card:hover{
+    transform:translateY(-6px);
+}
+.day-card .price{
+    font-weight:800;
+    color:var(--accent);
+    margin:0.5rem 0;
+}
+.card-actions{
+    display:flex;
+    gap:0.5rem;
+    align-items:center;
+}
 
 
