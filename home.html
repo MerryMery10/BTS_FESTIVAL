@@ -19,7 +19,7 @@
 
       <nav id="main-nav" class="nav" role="navigation" aria-label="Menú principal">
         <ul class="nav-list">
-          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="programa.html">Programa</a></li>
           <li><a href="entradas.html">Entradas</a></li>
           <li><a href="galeria.html">Galería</a></li>
@@ -70,7 +70,7 @@
             </video>
             <div class="slide-content container">
               <h1 class="slide-title">Dark &amp; Wild <span class="day">— Día 1</span></h1>
-              <p class="slide-sub">Inicio de la carrera: energía cruda y rebelde.</p>
+              <p class="slide-sub">Nostalgia y pasión en unos ojos llenos de eyeliner negro. El comienzo de BTS</p>
               <a href="programa.html#dia1" class="btn primary">Ver programa</a>
             </div>
           </div>
@@ -81,7 +81,7 @@
             </video>
             <div class="slide-content container">
               <h1 class="slide-title">The Most Beautiful Moment in Life <span class="day">— Día 2</span></h1>
-              <p class="slide-sub">Madurez emocional y nostalgia juvenil.</p>
+              <p class="slide-sub">Juventud eterna recordando esta era con ARMY</p>
               <a href="programa.html#dia2" class="btn primary">Ver programa</a>
             </div>
           </div>
@@ -141,7 +141,7 @@
           <p class="desc">Energía cruda, hip-hop y rock; escenarios urbanos y performance en vivo.</p>
           <div class="price">270€</div>
           <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="1" data-ticket="general">General</button>
+            <button class="btn outline select-ticket" data-ticket-day="1" data-ticket="general">GENERAL</button>
             <button class="btn primary select-ticket" data-ticket-day="1" data-ticket="vip">Comprar</button>
           </div>
         </article>
@@ -152,7 +152,7 @@
           <p class="desc">Melancolía, juventud y proyecciones visuales.</p>
           <div class="price">270€</div>
           <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="2" data-ticket="general">General</button>
+            <button class="btn outline select-ticket" data-ticket-day="2" data-ticket="general">GENERAL</button>
             <button class="btn primary select-ticket" data-ticket-day="2" data-ticket="vip">Comprar</button>
           </div>
         </article>
@@ -163,7 +163,7 @@
           <p class="desc">Simbolismo y escenografía dramática.</p>
           <div class="price">270€</div>
           <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="3" data-ticket="general">General</button>
+            <button class="btn outline select-ticket" data-ticket-day="3" data-ticket="general">GENERAL</button>
             <button class="btn primary select-ticket" data-ticket-day="3" data-ticket="vip">Comprar</button>
           </div>
         </article>
@@ -174,7 +174,7 @@
           <p class="desc">Mensajes positivos y repertorio global.</p>
           <div class="price">270€</div>
           <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="4" data-ticket="general">General</button>
+            <button class="btn outline select-ticket" data-ticket-day="4" data-ticket="general">GENERAL</button>
             <button class="btn primary select-ticket" data-ticket-day="4" data-ticket="vip">Comprar</button>
           </div>
         </article>
@@ -185,12 +185,91 @@
           <p class="desc">Introspección y despedida emotiva del festival.</p>
           <div class="price">270€</div>
           <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="5" data-ticket="general">General</button>
+            <button class="btn outline select-ticket" data-ticket-day="5" data-ticket="general">GENERAL</button>
             <button class="btn primary select-ticket" data-ticket-day="5" data-ticket="vip">Comprar</button>
           </div>
         </article>
       </div>
     </section>
+
+    <!-- Programa -->
+    <section class="program container" id="program">
+      <h2>Programa</h2>
+      <p class="lead">Horarios y actividades por día. Pulsa en cada fila para ver más detalles.</p>
+
+      <div class="program-table-wrap">
+        <table class="program-table" role="table" aria-label="Tabla de programación">
+          <thead>
+            <tr>
+              <th>Día</th>
+              <th>Era</th>
+              <th>Horario</th>
+              <th>Actividad destacada</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="prog-row" data-target="prog-1">
+              <td>09/06</td>
+              <td>Dark &amp; Wild</td>
+              <td>18:00 - 23:30</td>
+              <td>Concierto tributo + Performance</td>
+              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
+            </tr>
+            <tr class="prog-details" id="prog-1" hidden>
+              <td colspan="5">
+                <strong>Detalle:</strong> Apertura, DJ set, Concierto tributo, performance audiovisual y afterparty.
+              </td>
+            </tr>
+
+            <tr class="prog-row" data-target="prog-2">
+              <td>10/06</td>
+              <td>HYYH</td>
+              <td>18:00 - 23:30</td>
+              <td>Playlist acústica + Taller</td>
+              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
+            </tr>
+            <tr class="prog-details" id="prog-2" hidden>
+              <td colspan="5">Detalle: Exhibiciones, proyecciones temáticas, taller de coreografía.</td>
+            </tr>
+
+            <tr class="prog-row" data-target="prog-3">
+              <td>11/06</td>
+              <td>Wings</td>
+              <td>18:00 - 23:30</td>
+              <td>Exposición visual + Concierto</td>
+              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
+            </tr>
+            <tr class="prog-details" id="prog-3" hidden>
+              <td colspan="5">Detalle: Performance escénica y show en dos actos.</td>
+            </tr>
+
+            <tr class="prog-row" data-target="prog-4">
+              <td>12/06</td>
+              <td>Love Yourself</td>
+              <td>18:00 - 23:30</td>
+              <td>Panel + Concierto principal</td>
+              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
+            </tr>
+            <tr class="prog-details" id="prog-4" hidden>
+              <td colspan="5">Detalle: Charlas sobre impacto social y concierto temático.</td>
+            </tr>
+
+            <tr class="prog-row" data-target="prog-5">
+              <td>13/06</td>
+              <td>Map of the Soul</td>
+              <td>18:00 - 23:30</td>
+              <td>Charlas + Clausura</td>
+              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
+            </tr>
+            <tr class="prog-details" id="prog-5" hidden>
+              <td colspan="5">Detalle: Mesas redondas, proyecciones y cierre con set especial.Detalle: </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
 
 
   <script src="js/scripts.js" type="module"></script>

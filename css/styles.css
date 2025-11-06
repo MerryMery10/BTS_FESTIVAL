@@ -297,5 +297,37 @@ html[data-theme="dark"] .site-header{
     align-items:center;
 }
 
+/* PROGRAMA*/
+.program{
+    padding:2rem 0;
+}
+.program-table-wrap{
+    overflow:auto;
+    border-radius:10px;
+    background:var(--surface);
+    padding:0.6rem;
+    box-shadow:var(--shadow-1);
+}
+.program-table{
+    width:100%;
+    border-collapse:collapse;
+    color:var(--text);
+}
+.program-table th, .program-table td{
+    padding:0.8rem 1rem;
+    text-align:left;
+    border-bottom:1px solid rgba(0,0,0,0.04);
+}
+.program-table thead th{
+    font-weight:700;
+    background:transparent;
+}
+.prog-row:hover{
+    background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+.btn.small.toggle-row{
+    padding: 0.5rem 1rem;
+}
+
 
 

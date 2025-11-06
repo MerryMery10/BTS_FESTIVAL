@@ -106,7 +106,7 @@ document.addEventListener('visibilitychange', ()=> {
   else startAuto();
 });
 
-/*  Program rows toggle */
+/*  PROGRAMA */
 qsa('.toggle-row').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const tr = btn.closest('tr');
