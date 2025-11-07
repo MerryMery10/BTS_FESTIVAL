@@ -275,6 +275,32 @@
       </div>
       <p class="text-center"><a class="btn outline" href="galeria.html">Ver Galería</a></p>
     </section>
+    <!-- Contacto (mini) -->
+    <section class="contact container" id="contact">
+      <h2>Contacto</h2>
+      <p class="lead">¿Tienes alguna duda? Escríbenos.</p>
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="grid-2">
+          <div>
+            <label for="c-name">Nombre</label>
+            <input id="c-name" name="name" required>
+            <div class="error error-name" aria-live="polite"></div>
+          </div>
+          <div>
+            <label for="c-email">Correo</label>
+            <input id="c-email" name="email" type="email" required>
+            <div class="error error-email" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <label for="c-message">Mensaje</label>
+        <textarea id="c-message" name="message" rows="4" required></textarea>
+        <div class="error error-message" aria-live="polite"></div>
+
+        <button class="btn primary" type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
 
 
 

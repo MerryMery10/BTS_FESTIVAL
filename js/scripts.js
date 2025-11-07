@@ -138,3 +138,105 @@ function closeModal(){
 }
 modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', (e)=> { if(e.target === modal) closeModal(); });
+
+/* ---------------------------
+   Tickets: open purchase form modal (pre-fill)
+   --------------------------- */
+qsa('.select-ticket').forEach(btn=>{
+  btn.addEventListener('click', (e)=>{
+    const day = btn.dataset.ticketDay || '';
+    const type = btn.dataset.ticket || 'general';
+    const html = `
+      <h3>Formulario de compra</h3>
+      <p>Tipo: <strong>${type.toUpperCase()}</strong> ${day ? '- Día ' + day : ''}</p>
+      <form id="purchase-form" class="purchase-form">
+        <label>Nombre completo<input name="name" required></label>
+        <div class="error error-name" aria-live="polite"></div>
+
+        <label>Correo<input name="email" type="email" required></label>
+        <div class="error error-email" aria-live="polite"></div>
+
+        <label>Tipo de entrada
+          <select name="ticket">
+            <option value="general"${type==='general'?' selected':''}>General</option>
+            <option value="vip"${type==='vip'?' selected':''}>VIP</option>
+            <option value="premium">Premium</option>
+          </select>
+        </label>
+
+        <label>Cantidad<input name="quantity" type="number" min="1" value="1" required></label>
+        <div class="error error-quantity" aria-live="polite"></div>
+
+        <div style="margin-top:12px">
+          <button class="btn primary" type="submit">Confirmar compra (simulada)</button>
+          <button type="button" class="btn outline modal-close-btn">Cancelar</button>
+        </div>
+      </form>
+    `;
+    openModal(html);
+
+    // attach local handlers
+    const pf = qs('#purchase-form');
+    if(!pf) return;
+    pf.addEventListener('submit', (ev)=> {
+      ev.preventDefault();
+      pf.querySelectorAll('.error').forEach(n=>n.textContent='');
+      const name = pf.querySelector('[name="name"]').value.trim();
+      const email = pf.querySelector('[name="email"]').value.trim();
+      const qty = Number(pf.querySelector('[name="quantity"]').value);
+
+      let valid = true;
+      if(name.length < 2){ valid=false; pf.querySelector('.error-name').textContent = 'Introduce tu nombre'; }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ valid=false; pf.querySelector('.error-email').textContent = 'Email no válido'; }
+      if(!(qty >= 1)){ valid=false; pf.querySelector('.error-quantity').textContent = 'Cantidad mínima 1'; }
+
+      if(valid){
+        // Simulación: mostrar confirmación
+        openModal(`<h3>Compra confirmada (simulada)</h3><p>Gracias, ${name}. Hemos registrado ${qty} entrada(s). Se ha enviado un email a ${email} (simulado).</p><p style="margin-top:12px"><button class="btn primary modal-close-btn">Cerrar</button></p>`);
+      }
+    });
+    // close buttons inside modals
+    modalBody.addEventListener('click', (e)=> {
+      if(e.target.matches('.modal-close-btn')) closeModal();
+    }, { once: true });
+  });
+});
+
+/* ---------------------------
+   GALERÍA
+   --------------------------- */
+qsa('.thumb img').forEach(img => {
+  img.addEventListener('click', ()=> {
+    const src = img.getAttribute('src');
+    openModal(`<img src="${src}" alt="" style="width:100%;height:auto;border-radius:8px">`);
+  });
+});
+
+/* ---------------------------
+   CONTACTO - LÓGICA
+   --------------------------- */
+const contactForm = qs('#contact-form');
+if(contactForm){
+  contactForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    contactForm.querySelectorAll('.error').forEach(n=>n.textContent='');
+    const name = contactForm.querySelector('[name="name"]').value.trim();
+    const email = contactForm.querySelector('[name="email"]').value.trim();
+    const message = contactForm.querySelector('[name="message"]').value.trim();
+    let valid = true;
+    if(name.length < 2){ valid=false; contactForm.querySelector('.error-name').textContent = 'Introduce tu nombre'; }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ valid=false; contactForm.querySelector('.error-email').textContent = 'Email no válido'; }
+    if(message.length < 10){ valid=false; contactForm.querySelector('.error-message').textContent = 'Escribe un mensaje más largo'; }
+    if(valid){
+      contactForm.reset();
+      // micro-feedback
+      const tmp = document.createElement('div');
+      tmp.className = 'toast';
+      tmp.textContent = 'Tu mensaje ha sido enviado (simulado). ¡Gracias!';
+      document.body.appendChild(tmp);
+      setTimeout(()=> tmp.classList.add('show'), 10);
+      setTimeout(()=> tmp.classList.remove('show'), 2500);
+      setTimeout(()=> tmp.remove(), 3000);
+    }
+  });
+}
