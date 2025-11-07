@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BTS FESTIVAL</title>
+  <title>BTS FEST — Home</title>
 
-<!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/cyi3bit.css">
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
   <!-- Header / Nav -->
   <header class="site-header" role="banner">
@@ -19,15 +17,15 @@
 
       <nav id="main-nav" class="nav" role="navigation" aria-label="Menú principal">
         <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Inicio</a></li>
           <li><a href="programa.html">Programa</a></li>
           <li><a href="entradas.html">Entradas</a></li>
           <li><a href="galeria.html">Galería</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
-    
-<div class="controls">
+
+      <div class="controls">
         <!-- Theme toggle -->
         <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema" title="Cambiar tema" aria-pressed="false">
           <!-- Animated SVG (sun <-> moon) -->
@@ -57,70 +55,71 @@
         </button>
       </div>
     </div>
-  </header> 
+  </header>
 
-    <main>
+  <main>
     <!-- HERO: carrusel de 5 videos -->
     <section class="hero" aria-label="Hero: Eras carousel">
       <div class="carousel" id="era-carousel" role="region" aria-roledescription="carousel">
+
         <div class="slides">
           <div class="slide" data-era="Dark & Wild" aria-hidden="false">
             <video class="bg-video" muted playsinline loop preload="metadata" poster="assets/era-dark.jpg">
-              <source src="media/darkandwild_video.webm" type="video/webm">
+              <source src="media/videos/dw_video.mp4" type="video/mp4">
             </video>
             <div class="slide-content container">
               <h1 class="slide-title">Dark &amp; Wild <span class="day">— Día 1</span></h1>
-              <p class="slide-sub">Nostalgia y pasión en unos ojos llenos de eyeliner negro. El comienzo de BTS</p>
+              <p class="slide-sub">Inicio de la carrera: energía cruda y rebelde.</p>
               <a href="programa.html#dia1" class="btn primary">Ver programa</a>
             </div>
           </div>
 
           <div class="slide" data-era="HYYH" aria-hidden="true">
             <video class="bg-video" muted playsinline loop preload="metadata" poster="assets/era-hyyh.jpg">
-              <source src="media/hyyh_video.webm" type="video/webm">
+              <source src="media/videos/hyyh_video.mp4" type="video/mp4">
             </video>
             <div class="slide-content container">
               <h1 class="slide-title">The Most Beautiful Moment in Life <span class="day">— Día 2</span></h1>
-              <p class="slide-sub">Juventud eterna, recordando esta era con ARMY</p>
+              <p class="slide-sub">Madurez emocional y nostalgia juvenil.</p>
               <a href="programa.html#dia2" class="btn primary">Ver programa</a>
             </div>
           </div>
 
           <div class="slide" data-era="Wings" aria-hidden="true">
             <video class="bg-video" muted playsinline loop preload="metadata" poster="assets/era-wings.jpg">
-              <source src="media/wings_video.webm" type="video/webm">
+              <source src="media/videos/wings_video.mp4" type="video/mp4">
             </video>
             <div class="slide-content container">
               <h1 class="slide-title">Wings <span class="day">— Día 3</span></h1>
-              <p class="slide-sub">Vuelve a experimentar con BTS la primera vez que desplegamos las alas juntos</p>
+              <p class="slide-sub">Autodescubrimiento y simbolismo.</p>
               <a href="programa.html#dia3" class="btn primary">Ver programa</a>
             </div>
           </div>
 
           <div class="slide" data-era="Love Yourself" aria-hidden="true">
             <video class="bg-video" muted playsinline loop preload="metadata" poster="assets/era-love.jpg">
-              <source src="media/loveyourself_video.webm" type="video/webm">
+              <source src="media/videos/ly_video.mp4" type="video/mp4">
             </video>
             <div class="slide-content container">
               <h1 class="slide-title">Love Yourself <span class="day">— Día 4</span></h1>
-              <p class="slide-sub">Una etapa muy especial, única para cada ARMY. Una carta de amor escrita en música.</p>
+              <p class="slide-sub">Aceptación, amor y grandes éxitos.</p>
               <a href="programa.html#dia4" class="btn primary">Ver programa</a>
             </div>
           </div>
 
           <div class="slide" data-era="Map of the Soul" aria-hidden="true">
             <video class="bg-video" muted playsinline loop preload="metadata" poster="assets/era-map.jpg">
-              <source src="media/mapofthesoul_video.webm" type="video/webm">
+              <source src="media/videos/mots_video.mp4" type="video/mp4">
             </video>
             <div class="slide-content container">
               <h1 class="slide-title">Map of the Soul <span class="day">— Día 5</span></h1>
-              <p class="slide-sub">Las almas de ARMY y BTS bailan al ritmo de los mayores hits del grupo. Celebremos el aniversario de BTS juntos.</p>
+              <p class="slide-sub">Introspección y conexión con ARMY.</p>
               <a href="programa.html#dia5" class="btn primary">Ver programa</a>
             </div>
           </div>
         </div>
 
-        <!-- controles carrusel -->
+        <!-- controls -->
         <div class="carousel-controls container">
           <button class="ctrl" id="prev-slide" aria-label="Anterior">◀</button>
           <div class="dots" role="tablist" aria-label="Selector de slides"></div>
@@ -128,71 +127,7 @@
         </div>
       </div>
     </section>
-
-    <!-- Sección: tarjetas por día / compra rápida -->
-    <section class="days container" id="days">
-      <h2>Compra por día</h2>
-      <p class="lead">Selecciona la jornada que quieras revivir. Cada tarjeta incluye precio y acceso a más detalles.</p>
-
-      <div class="days-grid" role="list">
-        <article class="day-card" role="listitem" id="card-day1">
-          <h3>Dia 1 — Dark &amp; Wild</h3>
-          <p class="meta">Fecha: 01/07/2026 · Horario: 18:00 - 23:30</p>
-          <p class="desc">Energía cruda, reveldía, hip-hop y rock</p>
-          <div class="price">270€</div>
-          <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="1" data-ticket="general">GENERAL</button>
-            <button class="btn primary select-ticket" data-ticket-day="1" data-ticket="vip">Comprar</button>
-          </div>
-        </article>
-
-        <article class="day-card" role="listitem" id="card-day2">
-          <h3>Día 2 — HYYH</h3>
-          <p class="meta">Fecha: 02/07/2026 · Horario: 18:00 - 23:30</p>
-          <p class="desc">Melancolía y juventud eterna. Hip hop, R&B, pop y baladas</p>
-          <div class="price">270€</div>
-          <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="2" data-ticket="general">GENERAL</button>
-            <button class="btn primary select-ticket" data-ticket-day="2" data-ticket="vip">Comprar</button>
-          </div>
-        </article>
-
-        <article class="day-card" role="listitem" id="card-day3">
-          <h3>Día 3 — Wings</h3>
-          <p class="meta">Fecha: 03/07/2026 · Horario: 18:00 - 23:30</p>
-          <p class="desc">Despleguemos las alas juntos. Hip hop, EDM, dance pop, R&B, trap y baladas </p>
-          <div class="price">270€</div>
-          <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="3" data-ticket="general">GENERAL</button>
-            <button class="btn primary select-ticket" data-ticket-day="3" data-ticket="vip">Comprar</button>
-          </div>
-        </article>
-
-        <article class="day-card" role="listitem" id="card-day4">
-          <h3>Día 4 — Love Yourself</h3>
-          <p class="meta">Fecha: 04/07/2026 · Horario: 18:00 - 23:30</p>
-          <p class="desc">Una etapa muy especial. Pop, hip-hop, EDM y R&B</p>
-          <div class="price">270€</div>
-          <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="4" data-ticket="general">GENERAL</button>
-            <button class="btn primary select-ticket" data-ticket-day="4" data-ticket="vip">Comprar</button>
-          </div>
-        </article>
-
-        <article class="day-card" role="listitem" id="card-day5">
-          <h3>Día 5 — Map of the Soul</h3>
-          <p class="meta">Fecha: 05/07/2026 · Horario: 18:00 - 23:30</p>
-          <p class="desc">Celebremos el aniversario de BTS juntos con sus mayores hits. Pop, R&B, hip-hop y rock, con elementos de trap y EDM</p>
-          <div class="price">270€</div>
-          <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="5" data-ticket="general">GENERAL</button>
-            <button class="btn primary select-ticket" data-ticket-day="5" data-ticket="vip">Comprar</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Programa -->
+    <!-- Programa: tabla estética -->
     <section class="program container" id="program">
       <h2>Programa</h2>
       <p class="lead">Horarios y actividades por día. Pulsa en cada fila para ver más detalles.</p>
@@ -204,106 +139,73 @@
               <th>Día</th>
               <th>Era</th>
               <th>Horario</th>
+              <th>Actividad destacada</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <tr class="prog-row" data-target="prog-1">
-              <td>09/06</td>
+              <td>01/07</td>
               <td>Dark &amp; Wild</td>
               <td>18:00 - 23:30</td>
+              <td>Concierto tributo + Performance</td>
               <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
             </tr>
             <tr class="prog-details" id="prog-1" hidden>
               <td colspan="5">
-                <strong>SETLIST:</strong> Espectáculo especial: Apertura del festival - No More Dream - N.O. - Attack On Bangtan - Boy In Luv - Just One Day - Danger - War of Hormone - Hip Hop Lover - Let Me Know</td>
+                <strong>Detalle:</strong> Apertura, DJ set, Concierto tributo, performance audiovisual y afterparty.
+              </td>
             </tr>
 
             <tr class="prog-row" data-target="prog-2">
-              <td>10/06</td>
+              <td>02/07</td>
               <td>HYYH</td>
               <td>18:00 - 23:30</td>
+              <td>Playlist acústica + Taller</td>
               <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
             </tr>
             <tr class="prog-details" id="prog-2" hidden>
-              <td colspan="5"><strong>SETLIST:</strong> Run - Danger - Goes:"Autumn Leaves" - Tomorrow - Love Is Not Over - House of Cards - Boy In Luv - Save Me - Fire - Hip Hop Lover - Dope - Ma City - 2 Cool 4 Skool - No More Dream</td>
+              <td colspan="5">Detalle: Exhibiciones, proyecciones temáticas, taller de coreografía.</td>
             </tr>
 
             <tr class="prog-row" data-target="prog-3">
-              <td>11/06</td>
+              <td>03/07</td>
               <td>Wings</td>
               <td>18:00 - 23:30</td>
+              <td>Exposición visual + Concierto</td>
               <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
             </tr>
             <tr class="prog-details" id="prog-3" hidden>
-              <td colspan="5"><strong>SETLIST:</strong> Intro: Boy Meets Evil - Blood Sweat & Tears - Begin - Lie - Stigma - First Love - Reflection - Mama - Boy in Luv - Danger - I Need U - Run - Spring Day - A Supplementary Story: You Never Walk Alone - Outro: Wings</td>
+              <td colspan="5">Detalle: Performance escénica y show en dos actos.</td>
             </tr>
 
             <tr class="prog-row" data-target="prog-4">
-              <td>12/06</td>
+              <td>04/07</td>
               <td>Love Yourself</td>
               <td>18:00 - 23:30</td>
+              <td>Panel + Concierto principal</td>
               <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
             </tr>
             <tr class="prog-details" id="prog-4" hidden>
-              <td colspan="5"><strong>SETLIST:</strong> IDOL - Save Me - I'm Fine - Magic Shop - Trivia 起: Just Dance (J-Hope) - Euphoria - I Need U - Run - Serendipity - Trivia 承: Love - DNA - 21st Century Girl - Go Go - Blood Sweat & Tears - Boy In Luv - Danger - Airplane Pt.2 - Singularity (V) - FAKE LOVE - Trivia 轉: Seesaw - Epiphany - The Truth Untold - Outro: Tear - MIC Drop - So What - Anpanman</td>
+              <td colspan="5">Detalle: Charlas sobre impacto social y concierto temático.</td>
             </tr>
 
             <tr class="prog-row" data-target="prog-5">
-              <td>13/06</td>
+              <td>05/07</td>
               <td>Map of the Soul</td>
               <td>18:00 - 23:30</td>
+              <td>Charlas + Clausura</td>
               <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
             </tr>
             <tr class="prog-details" id="prog-5" hidden>
-              <td colspan="5"><strong>SETLIST:</strong> ON - N.O - We Are Bulletproof Pt.2 - Intro: Persona - Boy in Luv - Dionysus - Interlude: Shadow - Black Swan - UGH! - 00:00 (Zero O'Clock) - My Time - Filter - Moon - Inner Child - Outro: Ego - Boy with Luv - DNA - Dope - No More Dream - Spring Day - IDOL - Dynamite - We Are Bulletproof: The Eternal </td>
+              <td colspan="5">Detalle: Mesas redondas, proyecciones y cierre con set especial.</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-<!--GALERÍA-->
-    <section class="gallery container" id="gallery">
-      <h2>Galería</h2>
-      <div class="gallery-grid">
-        <figure class="thumb"><img src="media/DW_fotos/1000170358.webp" alt="Dark & Wild"></figure>
-        <figure class="thumb"><img src="media/HYYH_fotos/1000170377.webp" alt="HYYH"></figure>
-        <figure class="thumb"><img src="media/WINGS_fotos/4dc786d1f9361c051f1d83d8b5eeed67.webp" alt="Wings"></figure>
-        <figure class="thumb"><img src="media/LY_fotos/1000170398_1.webp" alt="Love Yourself"></figure>
-        <figure class="thumb"><img src="media/MOTS_fotos/1000170416.webp" alt="Map of the Soul"></figure>
-      </div>
-      <p class="text-center"><a class="btn outline" href="galeria.html">Ver Galería</a></p>
-    </section>
-    <!-- Contacto (mini) -->
-    <section class="contact container" id="contact">
-      <h2>Contacto</h2>
-      <p class="lead">¿Tienes alguna duda? Escríbenos.</p>
-      <form id="contact-form" class="contact-form" novalidate>
-        <div class="grid-2">
-          <div>
-            <label for="c-name">Nombre</label>
-            <input id="c-name" name="name" required>
-            <div class="error error-name" aria-live="polite"></div>
-          </div>
-          <div>
-            <label for="c-email">Correo</label>
-            <input id="c-email" name="email" type="email" required>
-            <div class="error error-email" aria-live="polite"></div>
-          </div>
-        </div>
 
-        <label for="c-message">Mensaje</label>
-        <textarea id="c-message" name="message" rows="4" required></textarea>
-        <div class="error error-message" aria-live="polite"></div>
-
-        <button class="btn primary" type="submit">Enviar mensaje</button>
-      </form>
-    </section>
-  </main>
-
-
-
-
-  <script src="js/scripts.js" type="module"></script>
-</body>    
+ <script src="js/scripts.js" type="module"></script>
+</body>
+</html>
