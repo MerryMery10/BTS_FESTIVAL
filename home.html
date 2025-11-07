@@ -127,84 +127,69 @@
         </div>
       </div>
     </section>
-    <!-- Programa: tabla estética -->
-    <section class="program container" id="program">
-      <h2>Programa</h2>
-      <p class="lead">Horarios y actividades por día. Pulsa en cada fila para ver más detalles.</p>
 
-      <div class="program-table-wrap">
-        <table class="program-table" role="table" aria-label="Tabla de programación">
-          <thead>
-            <tr>
-              <th>Día</th>
-              <th>Era</th>
-              <th>Horario</th>
-              <th>Actividad destacada</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="prog-row" data-target="prog-1">
-              <td>01/07</td>
-              <td>Dark &amp; Wild</td>
-              <td>18:00 - 23:30</td>
-              <td>Concierto tributo + Performance</td>
-              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
-            </tr>
-            <tr class="prog-details" id="prog-1" hidden>
-              <td colspan="5">
-                <strong>Detalle:</strong> Apertura, DJ set, Concierto tributo, performance audiovisual y afterparty.
-              </td>
-            </tr>
+     <!-- Sección: tarjetas por día / compra rápida -->
+    <section class="days container" id="days">
+      <h2>Compra por día</h2>
+      <p class="lead">Selecciona la jornada que quieras revivir. Cada tarjeta incluye precio y acceso a más detalles.</p>
 
-            <tr class="prog-row" data-target="prog-2">
-              <td>02/07</td>
-              <td>HYYH</td>
-              <td>18:00 - 23:30</td>
-              <td>Playlist acústica + Taller</td>
-              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
-            </tr>
-            <tr class="prog-details" id="prog-2" hidden>
-              <td colspan="5">Detalle: Exhibiciones, proyecciones temáticas, taller de coreografía.</td>
-            </tr>
+      <div class="days-grid" role="list">
+        <article class="day-card" role="listitem" id="card-day1">
+          <h3>Dia 1 — Dark &amp; Wild</h3>
+          <p class="meta">Fecha: 01/07/2026 · Horario: 18:00 - 23:30</p>
+          <p class="desc">Energía cruda, hip-hop y rock; escenarios urbanos y performance en vivo.</p>
+          <div class="price">270€</div>
+          <div class="card-actions">
+            <button class="btn outline select-ticket" data-ticket-day="1" data-ticket="general">General</button>
+            <button class="btn primary select-ticket" data-ticket-day="1" data-ticket="vip">Comprar</button>
+          </div>
+        </article>
 
-            <tr class="prog-row" data-target="prog-3">
-              <td>03/07</td>
-              <td>Wings</td>
-              <td>18:00 - 23:30</td>
-              <td>Exposición visual + Concierto</td>
-              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
-            </tr>
-            <tr class="prog-details" id="prog-3" hidden>
-              <td colspan="5">Detalle: Performance escénica y show en dos actos.</td>
-            </tr>
+        <article class="day-card" role="listitem" id="card-day2">
+          <h3>Día 2 — HYYH</h3>
+          <p class="meta">Fecha: 02/07/2026 · Horario: 18:00 - 23:30</p>
+          <p class="desc">Melancolía, juventud y proyecciones visuales.</p>
+          <div class="price">270€</div>
+          <div class="card-actions">
+            <button class="btn outline select-ticket" data-ticket-day="2" data-ticket="general">General</button>
+            <button class="btn primary select-ticket" data-ticket-day="2" data-ticket="vip">Comprar</button>
+          </div>
+        </article>
 
-            <tr class="prog-row" data-target="prog-4">
-              <td>04/07</td>
-              <td>Love Yourself</td>
-              <td>18:00 - 23:30</td>
-              <td>Panel + Concierto principal</td>
-              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
-            </tr>
-            <tr class="prog-details" id="prog-4" hidden>
-              <td colspan="5">Detalle: Charlas sobre impacto social y concierto temático.</td>
-            </tr>
+        <article class="day-card" role="listitem" id="card-day3">
+          <h3>Día 3 — Wings</h3>
+          <p class="meta">Fecha: 03/07/2026 · Horario: 18:00 - 23:30</p>
+          <p class="desc">Simbolismo y escenografía dramática.</p>
+          <div class="price">270€</div>
+          <div class="card-actions">
+            <button class="btn outline select-ticket" data-ticket-day="3" data-ticket="general">General</button>
+            <button class="btn primary select-ticket" data-ticket-day="3" data-ticket="vip">Comprar</button>
+          </div>
+        </article>
 
-            <tr class="prog-row" data-target="prog-5">
-              <td>05/07</td>
-              <td>Map of the Soul</td>
-              <td>18:00 - 23:30</td>
-              <td>Charlas + Clausura</td>
-              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
-            </tr>
-            <tr class="prog-details" id="prog-5" hidden>
-              <td colspan="5">Detalle: Mesas redondas, proyecciones y cierre con set especial.</td>
-            </tr>
-          </tbody>
-        </table>
+        <article class="day-card" role="listitem" id="card-day4">
+          <h3>Día 4 — Love Yourself</h3>
+          <p class="meta">Fecha: 04/07/2026 · Horario: 18:00 - 23:30</p>
+          <p class="desc">Mensajes positivos y repertorio global.</p>
+          <div class="price">270€</div>
+          <div class="card-actions">
+            <button class="btn outline select-ticket" data-ticket-day="4" data-ticket="general">General</button>
+            <button class="btn primary select-ticket" data-ticket-day="4" data-ticket="vip">Comprar</button>
+          </div>
+        </article>
+
+        <article class="day-card" role="listitem" id="card-day5">
+          <h3>Día 5 — Map of the Soul</h3>
+          <p class="meta">Fecha: 05/07/2026 · Horario: 18:00 - 23:30</p>
+          <p class="desc">Introspección y despedida emotiva del festival.</p>
+          <div class="price">270€</div>
+          <div class="card-actions">
+            <button class="btn outline select-ticket" data-ticket-day="5" data-ticket="general">General</button>
+            <button class="btn primary select-ticket" data-ticket-day="5" data-ticket="vip">Comprar</button>
+          </div>
+        </article>
       </div>
     </section>
-
 
  <script src="js/scripts.js" type="module"></script>
 </body>
