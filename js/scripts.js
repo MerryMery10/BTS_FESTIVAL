@@ -32,137 +32,165 @@ themeToggle.addEventListener('click', () => {
 });
 
 /* ---------------------------
-   Hamburger menu
-   --------------------------- */
+   NAVBAR / HAMBURGER MENU
+--------------------------- */
 const navToggle = qs('#nav-toggle');
 const nav = qs('#main-nav');
-navToggle.addEventListener('click', (e)=>{
-  const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-  navToggle.setAttribute('aria-expanded', !expanded);
-  nav.classList.toggle('open');
-  // animate hamburger bars
-  navToggle.classList.toggle('is-open');
-});
 
-/* Close nav on outside click for mobile */
-document.addEventListener('click', (e) => {
-  if(window.innerWidth > 700) return;
-  if(!nav.contains(e.target) && !navToggle.contains(e.target)){
-    nav.classList.remove('open');
-    navToggle.setAttribute('aria-expanded','false');
-    navToggle.classList.remove('is-open');
-  }
-});
+if (navToggle && nav) {
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    nav.classList.toggle('open');
+    navToggle.classList.toggle('is-open');
+  });
 
-/* Simple accessibility: show/hide nav when open (mobile) */
-const styleNavObserver = new MutationObserver(()=> {
-  if(nav.classList.contains('open')) nav.style.display = 'block';
-  else nav.style.display = '';
-});
-styleNavObserver.observe(nav, { attributes: true, attributeFilter: ['class'] });
-
+  // Cerrar menú al hacer click fuera (solo móvil)
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth > 768) return;
+    if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
+      nav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.classList.remove('is-open');
+    }
+  });
+}
 /* ---------------------------
-   Carousel logic
-   --------------------------- */
+   CAROUSEL (solo en index)
+--------------------------- */
 const slides = qsa('.slide');
 const dotsWrap = qs('.dots');
 let current = 0;
 let autoTimer = null;
 
-function createDots(){
-  slides.forEach((_,i)=>{
-    const btn = document.createElement('button');
-    btn.setAttribute('aria-label','Ir al slide ' + (i+1));
-    btn.addEventListener('click', ()=> showSlide(i));
-    dotsWrap.appendChild(btn);
-  });
-}
-function updateDots(){
-  qsa('.dots button').forEach((b,i)=> {
-    b.classList.toggle('active', i===current);
-  });
-}
-function showSlide(i){
-  slides.forEach((s, idx) => {
-    s.setAttribute('aria-hidden', idx!==i ? 'true' : 'false');
-    const v = s.querySelector('video');
-    if(v){ if(idx===i){ v.play().catch(()=>{}); } else { v.pause(); v.currentTime = 0; } }
-  });
-  current = i;
+if (slides.length > 0 && dotsWrap) {
+  function createDots() {
+    slides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.setAttribute('aria-label', `Ir al slide ${i + 1}`);
+      btn.addEventListener('click', () => showSlide(i));
+      dotsWrap.appendChild(btn);
+    });
+  }
+
+  function updateDots() {
+    qsa('.dots button').forEach((b, i) =>
+      b.classList.toggle('active', i === current)
+    );
+  }
+
+  function showSlide(i) {
+    slides.forEach((s, idx) => {
+      s.setAttribute('aria-hidden', idx !== i ? 'true' : 'false');
+      const v = s.querySelector('video');
+      if (v) {
+        if (idx === i) v.play().catch(() => {});
+        else {
+          v.pause();
+          v.currentTime = 0;
+        }
+      }
+    });
+    current = i;
+    updateDots();
+  }
+
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
+  function prevSlide() {
+    showSlide((current - 1 + slides.length) % slides.length);
+  }
+
+  createDots();
   updateDots();
-}
-function nextSlide(){ showSlide((current+1)%slides.length) }
-function prevSlide(){ showSlide((current-1+slides.length)%slides.length) }
+  showSlide(0);
 
-createDots();
-updateDots();
-showSlide(0);
+  const nextBtn = qs('#next-slide');
+  const prevBtn = qs('#prev-slide');
+  if (nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAuto();
+    });
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAuto();
+    });
+  }
 
-qs('#next-slide').addEventListener('click', ()=> { nextSlide(); resetAuto(); });
-qs('#prev-slide').addEventListener('click', ()=> { prevSlide(); resetAuto(); });
+  function startAuto() {
+    autoTimer = setInterval(nextSlide, 7000);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+  startAuto();
 
-function startAuto(){ autoTimer = setInterval(nextSlide, 7000); }
-function resetAuto(){ clearInterval(autoTimer); startAuto(); }
-startAuto();
-
-document.addEventListener('visibilitychange', ()=> {
-  if(document.hidden) clearInterval(autoTimer);
-  else startAuto();
-});
-
-/* ---------------------------
-   Program rows toggle
-   --------------------------- */
-qsa('.toggle-row').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const tr = btn.closest('tr');
-    const id = tr.dataset.target || tr.getAttribute('data-target');
-    const details = qs('#' + id);
-    if(!details) return;
-    const open = !details.hidden;
-    details.hidden = open;
-    btn.setAttribute('aria-expanded', String(!open));
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) clearInterval(autoTimer);
+    else startAuto();
   });
-});
+}
+/* ---------------------------
+   BOTONES “VER MÁS” (programa)
+--------------------------- */
+const botones = qsa(".ver-mas");
 
-// -------- CONTACTO.JS --------
+if (botones.length > 0) {
+  botones.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      const setlist = boton.nextElementSibling;
+      if (!setlist) return;
+      setlist.classList.toggle("visible");
+      boton.textContent = setlist.classList.contains("visible")
+        ? "Ver menos"
+        : "Ver más";
+    });
+  });
+}
+/* ---------------------------
+   FORMULARIO DE CONTACTO
+--------------------------- */
+const form = qs("#contact-form");
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-const form = document.getElementById("contact-form");
+    const nombre = form.nombre.value.trim();
+    const email = form.email.value.trim();
+    const mensaje = form.mensaje.value.trim();
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  
-  const nombre = form.nombre.value.trim();
-  const email = form.email.value.trim();
-  const mensaje = form.mensaje.value.trim();
-  const errorBox = document.getElementById("form-error");
+    if (!nombre || !email || !mensaje) {
+      showError("Por favor, completa todos los campos.");
+      return;
+    }
 
-  if (!nombre || !email || !mensaje) {
-    showError("Por favor, completa todos los campos.");
-    return;
-  }
+    if (!validateEmail(email)) {
+      showError("Por favor, introduce un correo electrónico válido.");
+      return;
+    }
 
-  if (!validateEmail(email)) {
-    showError("Por favor, introduce un correo electrónico válido.");
-    return;
-  }
-
-  successMessage("¡Gracias por tu mensaje! Te responderemos pronto.");
-  form.reset();
-});
+    showSuccess("¡Gracias por tu mensaje! Te responderemos pronto.");
+    form.reset();
+  });
+}
 
 function showError(msg) {
-  const errorBox = document.getElementById("form-error");
-  errorBox.textContent = msg;
-  errorBox.classList.add("show");
-  setTimeout(() => errorBox.classList.remove("show"), 4000);
+  const box = qs("#form-error");
+  if (!box) return;
+  box.textContent = msg;
+  box.classList.add("show");
+  setTimeout(() => box.classList.remove("show"), 4000);
 }
 
-function successMessage(msg) {
-  const success = document.getElementById("form-success");
-  success.textContent = msg;
-  success.classList.add("show");
-  setTimeout(() => success.classList.remove("show"), 4000);
+function showSuccess(msg) {
+  const box = qs("#form-success");
+  if (!box) return;
+  box.textContent = msg;
+  box.classList.add("show");
+  setTimeout(() => box.classList.remove("show"), 4000);
 }
 
 function validateEmail(email) {

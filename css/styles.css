@@ -319,34 +319,113 @@ html[data-theme="dark"] .site-header{
   .carousel-controls .dots{display:none}
 }
 
-/*------------- PÁGINA PROGRAM -------------- */
+/* =============== PROGRAMA =============== */
+.programa-section {
+  padding: 8rem 5% 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
-.program{
-    padding:2rem 0;
+.programa-section h2 {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
 }
-.program-table-wrap{
-    overflow:auto;
-    border-radius:10px;
-    background:var(--surface);
-    padding:0.6rem;
-    box-shadow:var(--shadow-1);
+
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  opacity: 0.8;
 }
-.program-table{
-    width:100%;
-    border-collapse:collapse;
-    color:var(--text);
+
+/* =============== ERA CARDS =============== */
+.era-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.program-table th, .program-table td{
-    padding:0.8rem 1rem;
-    text-align:left;
-    border-bottom:1px solid rgba(0,0,0,0.04);
+
+body.dark-theme .era-card {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
 }
-.program-table thead th{
-    font-weight:700;
-    background:transparent;
+
+.era-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
-.prog-row:hover{
-    background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+
+.era-card h3 {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-accent-light);
+}
+
+body.dark-theme .era-card h3 {
+  color: var(--color-accent-dark);
+}
+
+.ver-mas {
+  background-color: var(--color-accent-light);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+body.dark-theme .ver-mas {
+  background-color: var(--color-accent-dark);
+}
+
+.ver-mas:hover {
+  background-color: #8c7bc2;
+}
+
+/* =============== SETLIST =============== */
+.setlist {
+  display: none;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  list-style: disc;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.setlist.visible {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* =============== RESPONSIVE =============== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  .programa-section {
+    padding: 7rem 1rem 3rem;
+  }
+  .era-card {
+    padding: 1.2rem;
+  }
+  .era-card h3 {
+    font-size: 1.3rem;
+  }
 }
 
 /* -------- GALERÍA PAGE -------- */
