@@ -208,7 +208,7 @@ comprarBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     const ticketType = btn.getAttribute("data-ticket");
     const modalText = modal.querySelector("p");
-    modalText.innerHTML = `¿Deseas confirmar tu entrada <strong>${ticketType.toUpperCase()}</strong> para el día seleccionado?`;
+    modalText.innerHTML = `¿Deseas confirmar tu entrada para el día seleccionado?`;
     modal.classList.add("active");
   });
 });
