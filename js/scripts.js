@@ -125,3 +125,47 @@ qsa('.toggle-row').forEach(btn=>{
   });
 });
 
+// -------- CONTACTO.JS --------
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+  const nombre = form.nombre.value.trim();
+  const email = form.email.value.trim();
+  const mensaje = form.mensaje.value.trim();
+  const errorBox = document.getElementById("form-error");
+
+  if (!nombre || !email || !mensaje) {
+    showError("Por favor, completa todos los campos.");
+    return;
+  }
+
+  if (!validateEmail(email)) {
+    showError("Por favor, introduce un correo electrónico válido.");
+    return;
+  }
+
+  successMessage("¡Gracias por tu mensaje! Te responderemos pronto.");
+  form.reset();
+});
+
+function showError(msg) {
+  const errorBox = document.getElementById("form-error");
+  errorBox.textContent = msg;
+  errorBox.classList.add("show");
+  setTimeout(() => errorBox.classList.remove("show"), 4000);
+}
+
+function successMessage(msg) {
+  const success = document.getElementById("form-success");
+  success.textContent = msg;
+  success.classList.add("show");
+  setTimeout(() => success.classList.remove("show"), 4000);
+}
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}

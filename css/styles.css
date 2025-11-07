@@ -84,6 +84,7 @@ html[data-theme="dark"] .site-header{
     border-radius:8px;
     color:var(--text);
     font-weight:600;
+    text-decoration: none;
     transition:var(--transition);
 }
 .nav-list a:hover{
@@ -179,6 +180,7 @@ html[data-theme="dark"] .site-header{
     font-family:var(--ff-heading);
     font-size:clamp(28px,4vw,56px);
     margin:0 0 0.5rem;
+    color: #F2F2F2;
 }
 .slide-sub{
     margin:0 0 1rem;
@@ -192,6 +194,7 @@ html[data-theme="dark"] .site-header{
     cursor:pointer;
     font-weight:700;
     transition:var(--transition);
+    text-decoration: none;
 }
 .btn.primary{
     background:linear-gradient(90deg,var(--accent),var(--accent-2));
@@ -222,6 +225,7 @@ html[data-theme="dark"] .site-header{
     padding:0.5rem 0.8rem;
     border-radius:8px;
     cursor:pointer;
+    color: var(--accent);
 }
 .dots{
     display:flex;
@@ -480,6 +484,78 @@ body.dark-theme .era h2 {
 
   .galeria-section h1 {
     font-size: 1.6rem;
+  }
+}
+
+/* -------- CONTACTO PAGE -------- */
+
+.contacto-section {
+  padding: 8rem 2rem 6rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contacto-section h1 {
+  text-align: center;
+  font-family: var(--font-titles);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: var(--color-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+label {
+  font-weight: 600;
+  text-align: left;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid rgba(155,81,224,0.3);
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  resize: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #9b51e0;
+  outline: none;
+}
+
+button.btn {
+  align-self: center;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #9b51e0, #a259ff);
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #a259ff, #bb6bd9);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  #contact-form {
+    padding: 1.5rem;
   }
 }
 
