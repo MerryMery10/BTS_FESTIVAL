@@ -119,3 +119,22 @@ qsa('.toggle-row').forEach(btn=>{
     });
 });
 
+/* Modal - for forms + GALERÍA */
+
+const modal = qs('#modal');
+const modalBody = qs('#modal-body');
+const modalClose = qs('.modal-close');
+
+function openModal(contentHtml){
+  modalBody.innerHTML = '';
+  modalBody.insertAdjacentHTML('beforeend', contentHtml);
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden'; // lock scroll
+}
+function closeModal(){
+  modal.setAttribute('aria-hidden','true');
+  modalBody.innerHTML = '';
+  document.body.style.overflow = '';
+}
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e)=> { if(e.target === modal) closeModal(); });

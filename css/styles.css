@@ -329,5 +329,24 @@ html[data-theme="dark"] .site-header{
     padding: 0.5rem 1rem;
 }
 
+/*GALERÍA*/
 
+.gallery{
+    padding:2.5rem 0;
+}
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:0.6rem;
+}
+.thumb img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:8px;
+}
 
+.btn.outline{
+    color: var(--accent);
+    text-decoration: none;
+}
