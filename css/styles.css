@@ -282,3 +282,17 @@ html[data-theme="dark"] .site-header{
     align-items:center;
 }
 
+/* Footer */
+.site-footer{
+    padding:2rem 0;
+    border-top:1px solid rgba(0,0,0,0.04);
+    margin-top:2rem;
+}
+.footer-inner{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
