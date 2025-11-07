@@ -295,4 +295,54 @@ html[data-theme="dark"] .site-header{
     justify-content:space-between;
 }
 
+/* Responsive */
+@media (max-width: 1000px){
+  .days-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width: 700px){
+  .nav-list{display:none}
+  .hamburger{display:block}
+  .grid-2{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .days-grid{grid-template-columns:1fr}
+  .carousel-controls{padding:0 1rem}
+  .slide-content{padding:1.2rem 0}
+}
+@media (max-width: 420px){
+  .gallery-grid{grid-template-columns:1fr}
+  .slide-title{font-size:24px}
+  .carousel-controls .dots{display:none}
+}
+
+/*------------- PÁGINA PROGRAM -------------- */
+
+.program{
+    padding:2rem 0;
+}
+.program-table-wrap{
+    overflow:auto;
+    border-radius:10px;
+    background:var(--surface);
+    padding:0.6rem;
+    box-shadow:var(--shadow-1);
+}
+.program-table{
+    width:100%;
+    border-collapse:collapse;
+    color:var(--text);
+}
+.program-table th, .program-table td{
+    padding:0.8rem 1rem;
+    text-align:left;
+    border-bottom:1px solid rgba(0,0,0,0.04);
+}
+.program-table thead th{
+    font-weight:700;
+    background:transparent;
+}
+.prog-row:hover{
+    background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+
 

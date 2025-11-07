@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BTS FEST — Home</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/cyi3bit.css">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">BTS FEST</a>
+
+      <nav id="main-nav" class="nav" role="navigation" aria-label="Menú principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="programa.html">Programa</a></li>
+          <li><a href="entradas.html">Entradas</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="controls">
+        <!-- Theme toggle -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema" title="Cambiar tema" aria-pressed="false">
+          <!-- Animated SVG (sun <-> moon) -->
+          <svg id="theme-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <g class="sun" opacity="1">
+              <circle cx="12" cy="12" r="4" fill="currentColor"></circle>
+              <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+                <line x1="12" y1="2" x2="12" y2="4"/>
+                <line x1="12" y1="20" x2="12" y2="22"/>
+                <line x1="2" y1="12" x2="4" y2="12"/>
+                <line x1="20" y1="12" x2="22" y2="12"/>
+                <line x1="4" y1="4" x2="5.5" y2="5.5"/>
+                <line x1="18.5" y1="18.5" x2="20" y2="20"/>
+                <line x1="18.5" y1="5.5" x2="20" y2="4"/>
+                <line x1="4" y1="20" x2="5.5" y2="18.5"/>
+              </g>
+            </g>
+            <g class="moon" opacity="0">
+              <path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+            </g>
+          </svg>
+        </button>
+
+        <!-- Hamburger -->
+        <button id="nav-toggle" class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- Programa: tabla estética -->
+    <section class="program container" id="program">
+      <h2>Programa</h2>
+      <p class="lead">Horarios y actividades por día. Pulsa en cada fila para ver más detalles.</p>
+
+      <div class="program-table-wrap">
+        <table class="program-table" role="table" aria-label="Tabla de programación">
+          <thead>
+            <tr>
+              <th>Día</th>
+              <th>Era</th>
+              <th>Horario</th>
+              <th>Actividad destacada</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="prog-row" data-target="prog-1">
+              <td>01/07</td>
+              <td>Dark &amp; Wild</td>
+              <td>18:00 - 23:30</td>
+              <td>Concierto tributo + Performance</td>
+              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
+            </tr>
+            <tr class="prog-details" id="prog-1" hidden>
+              <td colspan="5">
+                <strong>Detalle:</strong> Apertura, DJ set, Concierto tributo, performance audiovisual y afterparty.
+              </td>
+            </tr>
+
+            <tr class="prog-row" data-target="prog-2">
+              <td>02/07</td>
+              <td>HYYH</td>
+              <td>18:00 - 23:30</td>
+              <td>Playlist acústica + Taller</td>
+              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
+            </tr>
+            <tr class="prog-details" id="prog-2" hidden>
+              <td colspan="5">Detalle: Exhibiciones, proyecciones temáticas, taller de coreografía.</td>
+            </tr>
+
+            <tr class="prog-row" data-target="prog-3">
+              <td>03/07</td>
+              <td>Wings</td>
+              <td>18:00 - 23:30</td>
+              <td>Exposición visual + Concierto</td>
+              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
+            </tr>
+            <tr class="prog-details" id="prog-3" hidden>
+              <td colspan="5">Detalle: Performance escénica y show en dos actos.</td>
+            </tr>
+
+            <tr class="prog-row" data-target="prog-4">
+              <td>04/07</td>
+              <td>Love Yourself</td>
+              <td>18:00 - 23:30</td>
+              <td>Panel + Concierto principal</td>
+              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
+            </tr>
+            <tr class="prog-details" id="prog-4" hidden>
+              <td colspan="5">Detalle: Charlas sobre impacto social y concierto temático.</td>
+            </tr>
+
+            <tr class="prog-row" data-target="prog-5">
+              <td>05/07</td>
+              <td>Map of the Soul</td>
+              <td>18:00 - 23:30</td>
+              <td>Charlas + Clausura</td>
+              <td><button class="btn small toggle-row" aria-expanded="false">Ver</button></td>
+            </tr>
+            <tr class="prog-details" id="prog-5" hidden>
+              <td colspan="5">Detalle: Mesas redondas, proyecciones y cierre con set especial.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+     <script src="js/scripts.js" type="module"></script>
+
+  </body>
