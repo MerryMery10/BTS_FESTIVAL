@@ -190,6 +190,7 @@ html[data-theme="dark"] .site-header{
     font-family:var(--ff-heading);
     font-size:clamp(28px,4vw,56px);
     margin:0 0 0.5rem;
+    color:#FAFAFB;
 }
 .slide-sub{
     margin:0 0 1rem;
