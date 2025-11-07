@@ -197,3 +197,38 @@ function validateEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(email);
 }
+
+/* ======== MODAL COMPRA ======== */
+const modal = document.getElementById("modal-overlay");
+const confirmarBtn = document.getElementById("confirmar-compra");
+const cancelarBtn = document.getElementById("cancelar-compra");
+const comprarBtns = document.querySelectorAll(".select-ticket");
+
+comprarBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const ticketType = btn.getAttribute("data-ticket");
+    const modalText = modal.querySelector("p");
+    modalText.innerHTML = `¿Deseas confirmar tu entrada <strong>${ticketType.toUpperCase()}</strong> para el día seleccionado?`;
+    modal.classList.add("active");
+  });
+});
+
+cancelarBtn.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
+
+confirmarBtn.addEventListener("click", () => {
+  const modalContent = modal.querySelector(".modal-content");
+  modalContent.innerHTML = `
+    <h2>¡Gracias por tu compra!</h2>
+    <p>Te hemos enviado un correo con la información de tu entrada.</p>
+  `;
+  setTimeout(() => {
+    modal.classList.remove("active");
+  }, 3000);
+});
+
+// Cerrar con clic fuera
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) modal.classList.remove("active");
+});

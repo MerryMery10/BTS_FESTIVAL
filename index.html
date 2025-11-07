@@ -10,52 +10,56 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Header / Nav -->
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">BTS FEST</a>
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">BTS FEST</a>
 
-      <nav id="main-nav" class="nav" role="navigation" aria-label="Menú principal">
-        <ul class="nav-list">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="programa.html">Programa</a></li>
-          <li><a href="entradas.html">Entradas</a></li>
-          <li><a href="galeria.html">Galería</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
+    <!-- NAV (id usado por el JS: #main-nav) -->
+    <nav id="main-nav" class="nav" role="navigation" aria-label="Menú principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="programa.html">Programa</a></li>
+        <li><a href="entradas.html">Entradas</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
 
-      <div class="controls">
-        <!-- Theme toggle -->
-        <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema" title="Cambiar tema" aria-pressed="false">
-          <!-- Animated SVG (sun <-> moon) -->
-          <svg id="theme-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-            <g class="sun" opacity="1">
-              <circle cx="12" cy="12" r="4" fill="currentColor"></circle>
-              <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
-                <line x1="12" y1="2" x2="12" y2="4"/>
-                <line x1="12" y1="20" x2="12" y2="22"/>
-                <line x1="2" y1="12" x2="4" y2="12"/>
-                <line x1="20" y1="12" x2="22" y2="12"/>
-                <line x1="4" y1="4" x2="5.5" y2="5.5"/>
-                <line x1="18.5" y1="18.5" x2="20" y2="20"/>
-                <line x1="18.5" y1="5.5" x2="20" y2="4"/>
-                <line x1="4" y1="20" x2="5.5" y2="18.5"/>
-              </g>
-            </g>
-            <g class="moon" opacity="0">
-              <path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-            </g>
-          </svg>
-        </button>
+    <div class="controls">
+      <!-- Theme toggle (opcional, el JS lo controla si existe) -->
+      <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema" title="Cambiar tema" aria-pressed="false">
+  <svg id="theme-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <!-- ☀️ Sol con rayos -->
+    <g class="sun" opacity="1" fill="currentColor">
+      <circle cx="12" cy="12" r="5"/>
+      <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="12" y1="1" x2="12" y2="4"/>
+        <line x1="12" y1="20" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
+        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="4" y2="12"/>
+        <line x1="20" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
+        <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+      </g>
+    </g>
 
-        <!-- Hamburger -->
-        <button id="nav-toggle" class="hamburger" aria-label="Abrir menú" aria-expanded="false">
-          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </button>
-      </div>
+    <!-- 🌙 Luna -->
+    <g class="moon" opacity="0" fill="currentColor">
+      <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
+    </g>
+  </svg>
+</button>
+
+      <!-- HAMBURGER button (id usado por el JS: #nav-toggle) -->
+      <button id="nav-toggle" class="hamburger" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
     </div>
-  </header>
+  </div>
+</header>
 
   <main>
     <!-- HERO: carrusel de 5 videos -->
@@ -140,7 +144,6 @@
           <p class="desc">Energía cruda, hip-hop y rock; escenarios urbanos y performance en vivo.</p>
           <div class="price">270€</div>
           <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="1" data-ticket="general">General</button>
             <button class="btn primary select-ticket" data-ticket-day="1" data-ticket="vip">Comprar</button>
           </div>
         </article>
@@ -151,7 +154,6 @@
           <p class="desc">Melancolía, juventud y proyecciones visuales.</p>
           <div class="price">270€</div>
           <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="2" data-ticket="general">General</button>
             <button class="btn primary select-ticket" data-ticket-day="2" data-ticket="vip">Comprar</button>
           </div>
         </article>
@@ -162,7 +164,6 @@
           <p class="desc">Simbolismo y escenografía dramática.</p>
           <div class="price">270€</div>
           <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="3" data-ticket="general">General</button>
             <button class="btn primary select-ticket" data-ticket-day="3" data-ticket="vip">Comprar</button>
           </div>
         </article>
@@ -173,7 +174,6 @@
           <p class="desc">Mensajes positivos y repertorio global.</p>
           <div class="price">270€</div>
           <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="4" data-ticket="general">General</button>
             <button class="btn primary select-ticket" data-ticket-day="4" data-ticket="vip">Comprar</button>
           </div>
         </article>
@@ -184,7 +184,6 @@
           <p class="desc">Introspección y despedida emotiva del festival.</p>
           <div class="price">270€</div>
           <div class="card-actions">
-            <button class="btn outline select-ticket" data-ticket-day="5" data-ticket="general">General</button>
             <button class="btn primary select-ticket" data-ticket-day="5" data-ticket="vip">Comprar</button>
           </div>
         </article>
@@ -198,6 +197,6 @@
     </div>
   </footer>
   
- <script src="js/scripts.js" type="module"></script>
+<script src="js/scripts.js" defer></script>
 </body>
 </html>
